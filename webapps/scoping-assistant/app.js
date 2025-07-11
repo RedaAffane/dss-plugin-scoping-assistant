@@ -1,0 +1,1 @@
+// This file is required by Dataiku but the actual app is loaded via the built assets 

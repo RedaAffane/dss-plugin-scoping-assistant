@@ -1,0 +1,1 @@
+# Scoping Assistant Plugin Python Library 

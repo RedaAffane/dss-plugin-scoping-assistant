@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "label": "Scoping Assistant",
+    "description": "A comprehensive scoping assistant for project analysis, service proposal generation, and scoping questions",
+    "icon": "icon-tasks"
+  },
+  "baseType": "STANDARD",
+  "enableJavascriptModules": "true",
+  "backendAPIAccessEnabled": true,
+  "hasBackend": "true",
+  "noJSSecurity": "true",
+  "standardWebAppLibraries": [
+    "dataiku"
+  ],
+  "params": [
+    {
+      "name": "general_settings",
+      "label": "General Settings",
+      "type": "SEPARATOR"
+    },
+    {
+      "type": "STRING",
+      "name": "app_title",
+      "label": "Application Title",
+      "description": "The title displayed in the application header",
+      "defaultValue": "Scoping Assistant",
+      "mandatory": false
+    },
+    {
+      "type": "TEXTAREA",
+      "name": "app_description",
+      "label": "Application Description",
+      "description": "A brief description of the application's purpose",
+      "defaultValue": "Generate project scoping questions, analyze inputs, and create service proposals",
+      "mandatory": false
+    },
+    {
+      "name": "data_settings",
+      "label": "Data Storage",
+      "type": "SEPARATOR"
+    },
+    {
+      "type": "DATASET",
+      "name": "scoping_history_dataset",
+      "label": "Scoping History Dataset",
+      "description": "Dataset to store scoping session history and generated content. Must be SQL.",
+      "mandatory": false,
+      "acceptsDataset": true,
+      "canSelectForeign": false,
+      "canCreateDataset": true,
+      "markCreatedAsBuilt": true
+    },
+    {
+      "type": "FOLDER",
+      "name": "documents_folder",
+      "label": "Documents Folder",
+      "description": "Folder to store uploaded documents and generated reports",
+      "mandatory": false
+    },
+    {
+      "name": "api_settings",
+      "label": "API Configuration",
+      "type": "SEPARATOR"
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "enable_logging",
+      "label": "Enable API Logging",
+      "description": "Log API requests and responses for debugging",
+      "defaultValue": false,
+      "mandatory": false
+    },
+    {
+      "type": "INT",
+      "name": "api_timeout",
+      "label": "API Timeout (seconds)",
+      "description": "Timeout for API requests in seconds",
+      "defaultValue": 30,
+      "minI": 5,
+      "maxI": 300,
+      "mandatory": false
+    },
+    {
+      "name": "generation_settings",
+      "label": "Content Generation Settings",
+      "type": "SEPARATOR"
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "enable_mock_data",
+      "label": "Enable Mock Data",
+      "description": "Use mock data for testing instead of real processing",
+      "defaultValue": true,
+      "mandatory": false
+    },
+    {
+      "type": "INT",
+      "name": "processing_delay",
+      "label": "Processing Delay (seconds)",
+      "description": "Simulated processing delay for mock data generation",
+      "defaultValue": 3,
+      "minI": 1,
+      "maxI": 10,
+      "mandatory": false,
+      "visibilityCondition": "model.enable_mock_data"
+    },
+    {
+      "name": "ui_settings",
+      "label": "User Interface Settings",
+      "type": "SEPARATOR"
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "show_debug_info",
+      "label": "Show Debug Information",
+      "description": "Display debug information in the UI",
+      "defaultValue": false,
+      "mandatory": false
+    },
+    {
+      "type": "SELECT",
+      "name": "theme",
+      "label": "Theme",
+      "description": "Application theme",
+      "defaultValue": "light",
+      "mandatory": false,
+      "selectChoices": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ]
+    }
+  ]
+} 

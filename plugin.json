@@ -1,0 +1,17 @@
+{
+    "id": "dss-plugin-scoping-assistant",
+    "version": "1.0.0",
+    "meta": {
+        "label": "Scoping Assistant",
+        "description": "A comprehensive scoping assistant for project analysis, service proposal generation, and scoping questions. Helps analyze inputs, generate assumptions, and create project blueprints.",
+        "author": "Reda Affane",
+        "icon": "icon-tasks",
+        "tags": [
+            "Project Management",
+            "Scoping",
+            "Analysis",
+            "Webapp"
+        ],
+        "licenseInfo": "MIT"
+    }
+} 
